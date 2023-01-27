@@ -1,0 +1,99 @@
+﻿@model IEnumerable<EzyPeezy.Models.Product>
+
+@{ ViewBag.Title = "Products";
+                Layout = "~/Views/Shared/_FluidLayout.cshtml"; }
+
+<div class="row">
+    @if (Request.IsAuthenticated)
+    {
+<div class="col-md-4 col-md-push-8">
+    <div class="panel panel-default clearfix">
+        <div class="panel-heading">
+            <h2>Cart</h2>
+        </div>
+
+        <div class="panel-body">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Unit Price</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in (Session["CartData"] as EzyPeezy.Models.Cart).Products)
+                    {
+    <tr>
+        <td>@Html.DisplayFor(productItem => item.Key.Name)</td>
+        <td>@Html.DisplayFor(productItem => item.Key.Price)</td>
+        <td>@Html.DisplayFor(productItem => item.Value)</td>
+    </tr>}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="panel-footer clearfix">
+            <div class="pull-right">
+                <p id="cart-total">Total: R@((Session["CartData"] as EzyPeezy.Models.Cart).TotalCost)</p>
+                @using (Html.BeginForm("Clear", "Cart", FormMethod.Post, new { id = "cart-clear" }))
+                {
+@Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-default">Clear</button>}
+                <a href="@Url.Action("Checkout", "Transactions")" class="btn btn-primary">Checkout</a>
+            </div>
+        </div>
+    </div>
+</div>}
+
+    <div class="@(Request.IsAuthenticated ? "col-md-8 col-md-pull-4" : "col-md-12")" id="@(Request.IsAuthenticated ? "products-list" : "")">
+        <h2>Products</h2>
+
+        <div class="fab-container">
+            @if (Request.IsAuthenticated)
+            {
+<a href="@Url.Action("Create")" class="btn btn-primary btn-fab btn-raised mdi-content-add">Add New Product</a>            }
+
+            <ul id="products-grid">
+                @foreach (var item in Model)
+                {
+    <li class="product-item panel panel-default">
+        <div class="panel-body">
+            <div class="panel-heading">
+                @if (item.Image != null)
+                {
+<img src="~/Images/@Url.Content(item.Image)" alt="Product image" />}
+            </div>
+            <h2>
+                @Html.ActionLink(item.Name, "Details", new { id = item.ID })
+            </h2>
+            <h3>
+                @Html.DisplayFor(modelItem => item.Price)
+            </h3>
+            <p>
+                @Html.DisplayFor(modelItem => item.Description)
+            </p>
+            <p>
+                @if (item.InStock)
+                {
+@Html.Raw("Quantity: ")
+                    @Html.DisplayFor(modelItem => item.Quantity) }
+                                    else
+                                    {
+                    @Html.Raw("Out of stock")}
+            </p>
+        </div>
+
+        @if (item.InStock && Request.IsAuthenticated)
+        {
+<div class="panel-footer">
+    @using (Html.BeginForm("AddItem", "Cart", new { ID = item.ID }, FormMethod.Post))
+    {
+@Html.AntiForgeryToken()
+                        <input type="submit" value="Add to cart" class="btn btn-default" />}
+</div>}
+    </li>}
+            </ul>
+        </div>
+    </div>
+</div>

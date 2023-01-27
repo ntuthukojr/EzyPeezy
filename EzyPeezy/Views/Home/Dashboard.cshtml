@@ -1,0 +1,144 @@
+﻿
+@{
+    
+    ViewBag.Title = "Backend";
+    Layout = "~/Views/Backend.cshtml";
+}
+
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="home-tab">
+                <div class="d-sm-flex align-items-center justify-content-between border-bottom">
+
+                </div>
+                <div class="tab-content tab-content-basic">
+                    <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview">
+                        <div class="row">
+                            <div class="col-sm-12">
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-8 d-flex flex-column">
+                                <div class="row flex-grow">
+                                    <div class="col-md-6 col-lg-12 grid-margin stretch-card">
+                                        <div class="card bg-primary card-rounded">
+                                            <div class="card-body pb-0">
+                                                <h5 class="card-title card-title-dash text-white mb-4"> Tuckshop Sales</h5>
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <div class="progress bg-black-transparent-5 mb-2" style="height: 6px">
+                                                            <div class="progrss-bar progress-bar-striped bg-white" style="width: 100.00%"></div>
+                                                        </div>
+                                                        <p class="status-summary-ight-white mb-1">Latest Transactions</p>
+                                                        <br/>
+                                                        <div>
+                                                            <a class="btn btn-warning text-white btn-lg mb-0 me-0" href="@Url.Action("Index", "Transactions")"><i class="mdi mdi-arrow-right"></i>View Sales</a>
+                                                        </div>
+                                                        <br />
+                                                    </div>
+
+                                                    <div class="col-sm-2 align-right">
+                                                        <div class="status-summary-chart-wrapper pb-4">
+                                                            <img src="~/Backend/template/images/People.png" alt="" class="d-block ms-n3 mb-8" style="max-height: 135px" width="180" />
+                                                        </div>
+                                                        <br />
+                                                        <br />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 d-flex flex-column">
+                                <div class="row flex-grow">
+                                    <div class="col-md-6 col-lg-12 grid-margin stretch-card">
+                                        <div class="card bg-gradient-primary card-rounded">
+                                            <div class="card-body pb-0">
+                                                <h4 class="card-title card-title-dash text-white mb-4">My Stock</h4>
+                                                <div class="progress bg-black-transparent-5 mb-2" style="height: 6px">
+                                                    <div class="progrss-bar progress-bar-striped bg-white" style="width: 100.00%"></div>
+                                                </div>
+                                                <br />
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <div>
+                                                            <a class="btn btn-warning text-white " href="@Url.Action("Index", "Products")">View Products<i class="mdi mdi-arrow-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-8 align-right">
+                                                        <div class="status-summary-chart-wrapper pb-4">
+                                                            <img src="~/Backend/template/images/Client.png" alt="" class="d-block ms-n3 mb-8" style="max-height: 90px" width="130" />
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-8 d-flex flex-column">
+                                <div class="row flex-grow">
+                                    <div class="col-12 grid-margin stretch-card">
+                                        <div class="card card-rounded">
+                                            <div class="card-body">
+                                                <div class="d-sm-flex justify-content-between align-items-start">
+                                                    <div>
+                                                        <h4 class="card-title card-title-dash">Revenue/Sales Statistics</h4>
+                                                        <p class="card-subtitle card-subtitle-dash">*Yearly Sales Statistics for your Business</p>
+                                                    </div>
+                                                    <div>
+                                                        <div class="dropdown">
+                                                            <button class="btn btn-secondary dropdown-toggle toggle-dark btn-lg mb-0 me-0" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> --View by Months-- </button>
+                                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                                                <h6 class="dropdown-header"></h6>
+                                                                <a class="dropdown-item" href="#">January</a>
+                                                                <a class="dropdown-item" href="#">February</a>
+                                                                <a class="dropdown-item" href="#">March</a>
+                                                                <a class="dropdown-item" href="#">April</a>
+                                                                <a class="dropdown-item" href="#">May</a>
+                                                                <a class="dropdown-item" href="#">June</a>
+                                                                <a class="dropdown-item" href="#">July</a>
+                                                                <a class="dropdown-item" href="#">August</a>
+                                                                <a class="dropdown-item" href="#">September</a>
+                                                                <a class="dropdown-item" href="#">October</a>
+                                                                <a class="dropdown-item" href="#">November</a>
+                                                                 <a class="dropdown-item" href="#">December</a>
+                                                                <div class="dropdown-divider"></div>
+                                                                <a class="dropdown-item" href="#"> Whole Year</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-sm-flex align-items-center mt-1 justify-content-between">
+                                                    <div class="d-sm-flex align-items-center mt-4 justify-content-between"><h2 class="me-2 fw-bold">R36,253.00</h2><h4 class="me-2">ZAR</h4><h4 class="text-success">(+1.37%)</h4></div>
+                                                    <div class="me-3"><div id="marketing-overview-legend"></div></div>
+                                                </div>
+                                                <div class="chartjs-bar-wrapper mt-3">
+                                                    <canvas id="marketingOverview"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

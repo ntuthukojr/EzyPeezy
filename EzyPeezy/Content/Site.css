@@ -1,0 +1,85 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.body-content {
+    margin: 2em auto;
+    position: relative;
+}
+
+.fab-container {
+    padding-bottom: 6em;
+}
+
+.btn-fab {
+    position: absolute !important;
+    bottom: 1em;
+    right: 1em;
+}
+
+.navbar-toggle {
+    color: #fff;
+}
+
+#products-list {
+    border-right: none;
+}
+
+@media (min-width: 992px) {
+    #products-list {
+        border-right: 1px solid #ccc;
+    }
+}
+
+#products-grid {
+    padding: 0;
+}
+
+.product-item {
+    display: inline-block;
+    list-style: none;
+    margin: 1em;
+    vertical-align: top;
+    width: 250px;
+}
+
+    .product-item img {
+        display: block;
+        margin: 0 auto;
+        max-height: 250px;
+        max-width: 100%;
+    }
+
+    .product-item .panel-footer {
+        text-align: center;
+    }
+
+#cart-total {
+    font-size: 1.5em;
+    text-align: right;
+}
+
+#cart-clear {
+    display: inline-block;
+}

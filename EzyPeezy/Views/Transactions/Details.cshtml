@@ -1,0 +1,110 @@
+﻿@model EzyPeezy.Models.Transaction
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Backend.cshtml";
+}
+
+@*<h2>Transaction Details</h2>
+
+<p>
+    @Html.ActionLink("Delete", "Delete", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+<hr />
+
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.TransactionDateTime)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.TransactionDateTime)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Amount)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Amount)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Items)
+    </dt>
+
+    <dd>
+        @Html.Raw(Html.Encode(Model.Items).Replace("\n", "<br>"))
+    </dd>
+
+    @if (Model.Customer != null)
+    {
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer)
+        </dd>
+    }
+</dl>*@
+
+<div class="content-wrapper">
+    <div class="row">
+
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="text-center">Transaction Details</h2>
+                    <br />
+                    <p>
+                        <div>
+                            <a class="btn btn-primary text-white  mb-0 me-0" href="@Url.Action("Index", "Transactions")">Back to List</a>
+                        </div>
+                    </p>
+                    <br />
+                    <br />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TransactionDateTime)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.TransactionDateTime)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Amount)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Amount)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Items)
+                        </dt>
+
+                        <dd>
+                            @Html.Raw(Html.Encode(Model.Items).Replace("\n", "<br>"))
+                        </dd>
+
+                        @if (Model.Customer != null)
+                        {
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Customer)
+                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.Customer)
+                                    </dd>}
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
